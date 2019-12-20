@@ -11,4 +11,10 @@ public class HelloWorldController {
 		return "Hello World";
 	}
 
+	@RequestMapping({ "/sasadara" })
+	public String sasadara() {
+		System.out.println("Hello sasadara How are you !!! ");
+		return "Hello sasadara";
+	}
+
 }

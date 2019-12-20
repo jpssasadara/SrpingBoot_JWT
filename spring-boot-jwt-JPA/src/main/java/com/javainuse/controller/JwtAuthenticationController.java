@@ -38,18 +38,22 @@ public class JwtAuthenticationController {
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
 
+		// Use check whether UserName and PassWord are correct or not
 		authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
+		// there is a Query to get User object according to user name then that object has been set to the
+		// "UserDetails" => class
 		final UserDetails userDetails = userDetailsService
 				.loadUserByUsername(authenticationRequest.getUsername());
-
+		// Generating the Token using UserDetails object data (Really it has been used only user name)
 		final String token = jwtTokenUtil.generateToken(userDetails);
-
+		// fixed token Response and return the token
 		return ResponseEntity.ok(new JwtResponse(token));
 	}
 	
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ResponseEntity<?> saveUser(@RequestBody UserDTO user) throws Exception {
+		// save user details to the User table
 		return ResponseEntity.ok(userDetailsService.save(user));
 	}
 
