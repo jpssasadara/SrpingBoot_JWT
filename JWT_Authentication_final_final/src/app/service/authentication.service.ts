@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import * as jwt_decode from 'jwt-decode';
+import {User1} from '../Models/user1';
 
 export class User{
   constructor(
@@ -10,6 +12,7 @@ export class User{
 }
 
 export class JwtResponse{
+
   constructor(
     public jwttoken:string,
   ) {}
@@ -21,6 +24,7 @@ export class JwtResponse{
 })
 export class AuthenticationService {
 
+  decoded: User1;
   constructor(
     private httpClient:HttpClient
   ) {
@@ -49,5 +53,18 @@ export class AuthenticationService {
 
   logOut() {
     sessionStorage.removeItem('username')
+  }
+
+  //  for checking whether logged user's token has role as Admin or not
+  isAdmin(){
+    this.decoded = jwt_decode(sessionStorage.getItem('token'));
+    console.log(this.decoded);
+    console.log('User1 Role => ' + this.decoded.UserRole);
+    if(this.decoded.UserRole == 'admins'){
+      return true;
+    }else {
+      return false;
+    }
+
   }
 }

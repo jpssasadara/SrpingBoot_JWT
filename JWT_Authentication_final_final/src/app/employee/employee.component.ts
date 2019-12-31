@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientService, Employee } from '../service/httpclient.service';
 import * as jwt_decode from 'jwt-decode';
+import {User1} from '../Models/user1';
 
 @Component({
   selector: 'app-employee',
@@ -12,7 +13,7 @@ export class EmployeeComponent implements OnInit {
   employees:Employee[];
 
  //  token = 'eyJhbGciOiJIUzUxMiJ9.eyJwcml2aWxlZ2VzIjoiQ1JVRCIsInN1YiI6ImphdmFpbnVzZSIsIlVzZXJSb2xlIjoiYWRtaW5zIiwiZXhwIjoxNTc3Nzg3NzYyLCJpYXQiOjE1Nzc3Njk3NjJ9.2EECUVgfoaZigrqaY1XTWpuBHx4GiM4FIaXCzFJfTCuHT6YRNQ3g1zcG8FREg2Qx5lpSMAsp0-oJCsDLDbO4Wg';
- decoded;
+ decoded: User1;
 
   constructor(
     private httpClientService:HttpClientService
@@ -24,6 +25,7 @@ export class EmployeeComponent implements OnInit {
         this.handleSuccessfulResponse(response);
         this.decoded = jwt_decode(sessionStorage.getItem('token'));
         console.log(this.decoded);
+        console.log('User1 Role => ' + this.decoded.UserRole);
       },
      );
   }
