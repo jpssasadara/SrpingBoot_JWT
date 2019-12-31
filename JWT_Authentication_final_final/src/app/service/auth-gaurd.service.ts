@@ -5,6 +5,9 @@ import { AuthenticationService } from './authentication.service';
 @Injectable({
   providedIn: 'root'
 })
+// this "AuthgardService" for all get permission for all user who has token
+// but we should create several "AuthgardService" for each users
+// if links are comming from data base like stucts 2 project no need of Authgard, we only want to hide some task of each page according to priviledges
 export class AuthGaurdService implements CanActivate {
 
   constructor(private router: Router,
