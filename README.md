@@ -10,6 +10,12 @@ Spring Boot +JSON Web Token(JWT) + MYSQL  Example => https://www.javainuse.com/s
 
 Angular 7 + Spring Boot JWT Authentication Hello World Example => https://www.javainuse.com/spring/ang7-jwt
 
+JWT Token with spring => https://www.baeldung.com/java-json-web-tokens-jjwt
+
+JWT Agnular           => https://www.npmjs.com/package/angular-jwt
+
+                         https://onthecode.co.uk/decode-json-web-tokens-jwt-angular/
+
 ==============
 Angular "AuthGaurdService" 
 ===========
