@@ -13,6 +13,7 @@ Angular 7 + Spring Boot JWT Authentication Hello World Example => https://www.ja
 JWT Token with spring => https://www.baeldung.com/java-json-web-tokens-jjwt
 
 JWT Agnular           => https://www.npmjs.com/package/angular-jwt
+                         https://onthecode.co.uk/decode-json-web-tokens-jwt-angular/
 
 ==============
 Angular "AuthGaurdService" 
