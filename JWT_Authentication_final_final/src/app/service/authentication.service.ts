@@ -11,7 +11,7 @@ export class User{
 
 }
 
-export class JwtResponse{
+export class JwtResponse {
 
   constructor(
     public jwttoken:string,
@@ -46,7 +46,7 @@ export class AuthenticationService {
 
 
   isUserLoggedIn() {
-    let user = sessionStorage.getItem('username')
+    const user = sessionStorage.getItem('username')
     //console.log(!(user === null))
     return !(user === null)
   }
@@ -56,13 +56,13 @@ export class AuthenticationService {
   }
 
   //  for checking whether logged user's token has role as Admin or not
-  isAdmin(){
+  isAdmin() {
     this.decoded = jwt_decode(sessionStorage.getItem('token'));
     console.log(this.decoded);
     console.log('User1 Role => ' + this.decoded.UserRole);
-    if(this.decoded.UserRole == 'admins'){
+    if (this.decoded.UserRole == 'admins') {
       return true;
-    }else {
+    } else {
       return false;
     }
 
