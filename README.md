@@ -27,3 +27,6 @@ Angular "BasicAuthHtppInterceptorService"
 ==================
 is used to call before calling Rest Api like struts 2 intercepters (we can change / add some parts to Http Request (like header) when intercepter is called)
 -------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------
+Spring Boot interceptor
+https://evisioncsse.blogspot.com/2020/01/intercepting-incoming-requests-using.html
